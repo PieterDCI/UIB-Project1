@@ -130,7 +130,6 @@ input#mailer:valid + label {display: none;}
         margin-right: 1.5em;
         .merch {
             width: 20vw; aspect-ratio: 3 /2 ; 
-            border: 1px solid white; 
             max-width: 400px; min-width: 200px; 
             background: url(/Assets/pexels-eric-anada-5915844.jpg);
             background-size: cover;
@@ -177,7 +176,7 @@ footer {
     header nav ul {justify-content: center; margin-top: 1em;}
     header nav ul li {margin: 0.3;}
     .mailer {justify-content: center; margin: 0;}
-    .wrapper .hero {width: 40ch;}
+    .wrapper .hero {width: 40ch; margin-top: -3em;}
     .wrapper .gear {margin-top: 10em;}
 }
     

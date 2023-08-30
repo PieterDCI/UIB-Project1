@@ -92,6 +92,7 @@ article {
             top: 0;
             translate: -35px;
             color: rgba($color: white, $alpha: 0.2);
+            pointer-events: none;
         }
    }
    div.images {
