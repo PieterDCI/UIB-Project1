@@ -1,20 +1,17 @@
 *{padding: 0; margin: 0; box-sizing: border-box; list-style: none;}
 :root {font-size: 62.5%;} html, body {height: 100%;}
-$clr-dark1: #352F44; $clr-dark1-tr: rgba($color: #352F44, $alpha: 0.97);
-$clr-dark2: #5C5470; $clr-dark2-tr: rgba($color: #5C5470, $alpha: 0.9);
-$clr-light1: #B9B4C7;
-$clr-light2: #FAF0E6;
+$clr-dark1: #2C3333; $clr-dark1-tr: rgba($color: #2C3333, $alpha: 0.98);
+$clr-dark2: #395B64; $clr-dark2-tr: rgba($color: #2e4f4f, $alpha: 0.9);
+$clr-light1: #A5C9CA;
+$clr-light2: #E7F6F2;
 body {
     background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-}
+    display: flex; flex-direction: column;}
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
 header {
     font-size: 1.6rem;
-    font-family: sans-serif;
     padding: 2em 1.5em;
     display: flex;
     justify-content:space-between;
@@ -22,34 +19,19 @@ header {
     color: $clr-light2;
     height: 100px;
 
-    #search {
-        background-color: $clr-dark1; 
-        color: $clr-light2; 
-        border: none; 
-        outline: none;
-        width: 100px;
-        &::placeholder {color: $clr-light1;}
-        &:focus {border: none;}
-    }
-
     nav ul {display: flex;justify-content: end;
         li {
             background-color: $clr-dark1;
             padding: 0.5em 2.5vw;
             border-radius: 1.2em;
             box-shadow: 3px 3px 10px $clr-light2;
-            &:nth-of-type(1) {transition: none;}
-            &:nth-of-type(1):hover {transform: none;}
-            &:nth-of-type(1):active {animation-name: none;}
             transition: all 0.5s;
             margin-left: 2vw;
             cursor: pointer;
             a {color: $clr-light2; text-decoration: none;}
-            &:active {animation-name: dim; 
-                animation-duration: 0.1s;
-                animation-fill-mode: forwards;}
+            &:active {animation-name: dim; animation-duration: 0.1s; animation-fill-mode: forwards;}
             &:hover {transform: scale(1.05);}
-            &:nth-of-type(2) {margin-left: 4vw;}
+            &:nth-of-type(3) {margin-left: 3vw;}
         }
     }
 
@@ -75,42 +57,67 @@ header {
 }
 
 
-// ---------------------main--------------------------------------------------------------------------------------------------
-main {background-color: $clr-dark1-tr; flex: auto;}
-article {
-    width: 70vw;
-    margin: 10em auto;
-    div.text {
-        font-size: 1.4rem; 
-        width: 90%;
-        max-width: 75ch; 
-        text-align: center; 
-        margin: auto; 
-        padding: 2em; 
-        position: relative;
-        p {margin: 1em;}
-        .article-type {
-            text-transform: uppercase; 
-            rotate: (-90deg);
-            position: absolute;
-            font-weight: 900;
-            top: 0;
-            translate: -35px;
-            color: rgba($color: white, $alpha: 0.2);
-            pointer-events: none;
-        }
-   }
-   div.images {
+// ---------------------main-------------------------------------------------------------------------------------------------------------
+
+main {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    img {width: 180px; 
-        height: 120px; 
-        transition: 0.3s;
-        border: none;
-        &:hover, &:active {transform: scale(1.3);}}
-   }
+    flex-direction: column;
+    flex: auto;
+    background-color: $clr-dark1-tr;
+    .logout {
+        font-size: 1.4rem; 
+        position: absolute; 
+        right: 30px;
+        margin: 1em;
+        padding: 0.3em 1em;
+        border-radius: 1em;
+        border: 1px solid $clr-light1;
+        a {text-decoration: none; color: $clr-light2; &:visited {color: $clr-light2;}}
+    }
+
+    .profile {
+        width: 300px;
+        flex-grow: 0;
+        margin: auto;
+        text-align: center;
+        margin-top: 5em;
+        font-size: 1.4rem;
+        picture {font-size: 5rem;}
+        
+    }
+    .wrapper {
+        font-size: 1.4rem;
+        form{
+            display: grid;
+            grid-template: repeat(11, 30px) 1fr/ 1fr 300px 50px 1fr;
+            input {
+                width: 15px; height: 15px;
+                &:nth-of-type(1) {grid-area: 2 / 3 / 3 / 4 ;}
+                &:nth-of-type(2) {grid-area: 3 / 3 / 4 / 4 ;}
+                &:nth-of-type(3) {grid-area: 4 / 3 / 5 / 4 ;}
+            }
+            label {
+                &:nth-of-type(1) {grid-area: 2 / 2 / 3 / 3 ;}
+                &:nth-of-type(2) {grid-area: 3 / 2 / 4 / 3 ;}
+                &:nth-of-type(3) {grid-area: 4 / 2 / 5 / 3 ;}
+            }
+
+            button {
+                grid-area: 5 / 2 / 6 / 3;
+                background-color: $clr-dark2;
+                padding: 0.5em 1em;
+                border-radius: 1.2em;
+                border: none;
+                width: 160px;
+                height: 30px;
+                color: $clr-light2;
+                justify-self: center;
+                &:hover {border: 1px solid $clr-light2;}
+            }
+        }
+        
+    
+    }
 }
 
 
@@ -118,16 +125,16 @@ article {
 
 footer {
     background-color: $clr-dark2-tr;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.1rem 1.5rem;
-    p {translate: 40px;}
+    padding: 1rem 1.5rem;
     nav.contact, nav.social {
         ul li {
             display: inline-block;
             font-size: 1.2rem;
-            margin-right: 0.5em;
+            margin-left: 1em;
             a {text-decoration: none; color: $clr-light2; &:hover {color: $clr-light1;}}
         }
     }
@@ -140,13 +147,6 @@ footer {
     header {flex-direction: column; align-items: center; height: 130px;} 
     header nav ul {justify-content: center; margin-top: 1em;}
     header nav ul li {margin: 0.3;}
-}
-    
-
-@media (min-width: 620px) {
-    article:nth-of-type(even) {position: relative; left: 10%;}
-    article:nth-of-type(odd) {position: relative; right: 10%;}
-    article div.text {font-size: 1.6rem;}
 }
 
 @media (max-width: 620px) {footer {position:static; flex-direction: column; gap: 2em; p {translate: 0px;}}}

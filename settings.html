@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="/dist/settings.css">
+</head>
+<body>
+    <header>
+        <div class="brand">The UI <i class="icon-camera-retro"></i></i> Magazine</div>
+        <nav>
+            <ul>
+                <li><a href="/gear.html">Gear</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/index.html"><i class="icon-home"></i></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="logout"><a href="/index.html">Log out <i class="icon-signout"></i></a></div>
+        <div class="profile">
+            <picture><i class="icon-user"></i></picture>
+            <h2>Welcome back,<span> Pieter</span></h2>
+            <p>Please review your email settings below:</p>
+        </div>
+        <div class="wrapper">
+            <form action="#">
+                <label for="box1">Would you like to receive newsletters?</label>
+                <input type="checkbox" id="box1" checked>
+                <label for="box2">Notify about new gear reviews (email)?</label>
+                <input type="checkbox" id="box2">
+                <label for="box3">Notify about new blog entries (email)?</label>
+                <input type="checkbox" id="box3">
+                <button type="submit">Save preferences</button>
+    
+            </form>
+        </div>
+    </main>
+    <footer>
+        <nav class="social">
+            <ul>
+                <li><a href="www.facebook.com" target="_blank"><i class="icon-facebook-sign"></i></a></li>
+                <li><a href="www.twitter.com" target="_blank"><i class="icon-twitter-sign"></i></a></li>
+                <li><a href="www.instagram.com" target="_blank"><i class="icon-instagram"></i></a></li>
+            </ul>
+        </nav>
+        <nav class="contact">
+            <ul>
+                <li><a href="#"><i class="icon-info-sign"></i> T&C</a></li>
+                <li><a href="#"><i class="icon-question-sign"></i> FAQ </i></a></li>
+                <li><a href="#"><i class="icon-comment"></i></i> Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

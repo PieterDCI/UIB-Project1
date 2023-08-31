@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <title>GenericAccount</title>
+    <title>UI camera Account</title>
     <link rel="stylesheet" href="/dist/account.css">
 </head>
 <body>
     <header>
-        <div class="brand">The <i class="icon-quote-left"> Generic<i class="icon-quote-right"></i> <i class="icon-camera"> Store</i></i></div>
+        <div class="brand">The UI <i class="icon-camera-retro"></i></i> Magazine</div>
         <nav>
             <ul>
-                <li><a href="#">Gear</a></li>
+                <li><a href="/gear.html">Gear</a></li>
                 <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/index.html"><i class="icon-home"></i></i></a></li>
             </ul>
@@ -28,12 +28,12 @@
                     <label for="email"><i class="icon-envelope-alt"></i></label>
                     <input type="email" name="" id="email" required>
                     <label for="pass"><i class="icon-lock"></i></label>
-                    <input type="password" name="password" id="pass" required>
-                    <button type="submit">Submit <i class="icon-circle-arrow-right"></i></button>
+                    <input type="password" name="password" id="pass" required pattern=".{5,}">
+                    <button id="submit1" type="submit">Log in <i class="icon-circle-arrow-right"></i></button>
                 </form>
                 <h2>or</h2>
-                <button class="altlogin"><a href="#"><i class="icon-apple"></i>Continue with Apple</a></button>
-                <button class="altlogin"><a href="#"><i class="icon-facebook"></i>Continue with Facebook</a></button>
+                <button class="altlogin"><a href="/settings.html"><i class="icon-apple"></i>Continue with Apple</a></button>
+                <button class="altlogin"><a href="/settings.html"><i class="icon-facebook"></i>Continue with Facebook</a></button>
             </div>
             <div class="signup">
                 <p>New here?</p>
@@ -44,12 +44,12 @@
                     <label for="lname"></label>
                     <input type="text" name="lname" placeholder="Last name..." id="lname" required>
                     <label for="email"><i class="icon-envelope-alt"></i></label>
-                    <input type="email" name="email" placeholder="Email..." id="email" required>
-                    <label for="pass"><i class="icon-lock"></i></label>
-                    <input type="password" name="password" placeholder="Password..." id="pass" required>
-                    <label for="pass"><i class="icon-lock"></i></label>
-                    <input type="password" name="password" placeholder="Repeat password..." id="pass" required>
-                    <button type="submit">Submit <i class="icon-circle-arrow-right"></i></button>
+                    <input type="email" name="email" placeholder="Email..." id="email2" required>
+                    <label for="pass2"><i class="icon-lock"></i></label>
+                    <input type="password" name="password" placeholder="Password... (min. 5 characters)" id="pass2" required pattern=".{5,}"">
+                    <label for="pass3"><i class="icon-lock"></i></label>
+                    <input type="password" name="passwordr" placeholder="Repeat password..." id="pass3" required pattern=".{5,}"">
+                    <button type="submit">Create account <i class="icon-circle-arrow-right"></i></button>
                 </form>
             </div>
         </div>
@@ -62,6 +62,7 @@
                 <li><a href="www.instagram.com" target="_blank"><i class="icon-instagram"></i></a></li>
             </ul>
         </nav>
+        <p>&#169 All rights reserved 2023</p>
         <nav class="contact">
             <ul>
                 <li><a href="#"><i class="icon-info-sign"></i> T&C</a></li>

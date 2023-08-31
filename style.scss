@@ -1,11 +1,12 @@
 *{padding: 0; margin: 0; box-sizing: border-box; list-style: none;}
-:root {font-size: 62.5%;}
-$primary-color-dark1: #2C3333;
-$primary-color-dark2: #395B64;
+:root {font-size: 62.5%;} html, body {height: 100%;}
+$primary-color-dark1: #2C3333; $secondary-dark1-tr: rgba($color: #2C3333, $alpha: 0.98);
+$primary-color-dark2: #395B64; $secondary-dark2-tr: rgba($color: #2e4f4f, $alpha: 0.9);
 $primary-color-light1: #A5C9CA;
 $primary-color-light2: #E7F6F2;
-body {background-color: $primary-color-dark1; color: $primary-color-light2;}
-
+body {
+    background-image: url(/Assets/bgimg.jpg); color: $primary-color-light2; font-family: sans-serif;
+    display: flex; flex-direction: column;}
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
 header {
@@ -13,7 +14,7 @@ header {
     padding: 2em 1.5em;
     display: flex;
     justify-content:space-between;
-    background-color: $primary-color-dark2;
+    background-color: $secondary-dark2-tr;
     color: $primary-color-light2;
     height: 100px;
 
@@ -37,14 +38,14 @@ header {
 
     .brand {
         font-size: 2rem; 
-        i {margin-left: 0.2em;};
+        i {margin: 0 0.3em;};
         display: flex;
         align-items: center;
         border-top: 1px solid;
         border-bottom: 1px solid;
-        font-family: FontAwesome;
         pointer-events: none;
         flex-shrink: 0;
+        font-family: monospace;
     }
 }
 
@@ -59,6 +60,7 @@ header {
 
 // ---------------------main-------------------------------------------------------------------------------------------------------------
 
+main {background-color: $secondary-dark1-tr; flex: auto;}
 .mailer {
     display: flex;
     height: 50px;
@@ -69,7 +71,7 @@ header {
             height: 100%; 
             width: 300px; 
             border-radius: 1.2em; 
-            background-color: $primary-color-dark2;
+            background-color: rgba($color: #2e4f4f, $alpha: 0.9);
             font-size: 1.6rem;
             outline: none;
             padding-left: 1em;
@@ -111,13 +113,14 @@ input#mailer:focus +label {
     border-right: 1px solid $primary-color-light2;}
 input#mailer:focus {border: 1px solid $primary-color-light2;}
 input#mailer:valid {border-color: lime; color: lime; } 
-input#mailer:valid + label {display: none;}
+input#mailer:valid +label {display: none;}
 
 
 .wrapper {
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
     grid-template-rows: 8em 100px 1fr 50px ;
+    h3 {font-size: 1.3rem;}
 
     .hero {width: 70ch; p {font-size: 1.4rem;}; grid-area: 2 / 3 / 3 / 5;}
     .gear {
@@ -130,13 +133,15 @@ input#mailer:valid + label {display: none;}
         margin-right: 1.5em;
         .merch {
             width: 20vw; aspect-ratio: 3 /2 ; 
-            max-width: 400px; min-width: 200px; 
+            max-width: 500px; min-width: 200px; 
             background: url(/Assets/pexels-eric-anada-5915844.jpg);
             background-size: cover;
             cursor: pointer;
         }
     }
 }
+
+#brandspan {font-family: 'Courier New', Courier, monospace; pointer-events: none;}
 
 // ---------------------aside-------------------------------------------------------------------------------------------------
 
@@ -149,16 +154,31 @@ input#mailer:valid + label {display: none;}
 // ---------------------footer-------------------------------------------------------------------------------------------------
 
 footer {
-    background-color: $primary-color-dark2;
-    height: 50px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    background-color: $secondary-dark2-tr;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: end;
-    padding-right: 1.5rem;
+    justify-content: space-between;
+    padding: 1.5rem;
+    .lhrating, .code {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #50a784; 
+        border-radius: 50%; 
+        padding: 0.8em 0.5em;
+        margin-right: 0.5em;
+        color: #50a784;
+        font-weight: 700;
+        background-color: $primary-color-dark1;
+        pointer-events: none;
+    }
+    .code {
+        padding: 0.5em; 
+        border: 2px solid 
+        $primary-color-light2; 
+        font-size: 1.2rem; 
+        background-color: $primary-color-dark2;
+        a {color: $primary-color-light2; pointer-events: visible;}}
+    p:nth-of-type(2) {translate: 30px;}
     nav.contact {
         ul li {
             display: inline-block;
@@ -178,6 +198,10 @@ footer {
     .mailer {justify-content: center; margin: 0;}
     .wrapper .hero {width: 40ch; margin-top: -3em;}
     .wrapper .gear {margin-top: 10em;}
+    footer {position:static; flex-direction: column; gap: 2em; align-items: center; p:nth-of-type(2) {translate: 0px;}}
 }
     
-// @media (min-height: 1000px) (max-width: 1000px) {.wrapper .gear {max-width: 300px;}}
+@media (min-width: 974px) {
+    .wrapper {position: relative; right: 100px; top: 50px;}
+    .nav-social {position: absolute; top: 28em;}
+}

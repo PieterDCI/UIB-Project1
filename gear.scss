@@ -1,9 +1,9 @@
 *{padding: 0; margin: 0; box-sizing: border-box; list-style: none; text-decoration: none;}
 :root {font-size: 62.5%;} html, body {height: 100%;}
-$clr-dark1: #6F4C5B; $clr-dark1-tr: rgba($color: #6F4C5B, $alpha: 0.98);
-$clr-dark2: #9E7777; $clr-dark2-tr: rgba($color: #9E7777, $alpha: 0.9);
-$clr-light1: #DEBA9D;
-$clr-light2: #F5E8C7;
+$clr-dark1: #2C3333; $clr-dark1-tr: rgba($color: #2C3333, $alpha: 0.98);
+$clr-dark2: #2E4F4F; $clr-dark2-tr: rgba($color: #2E4F4F, $alpha: 0.9);
+$clr-light1: #0E8388;
+$clr-light2: #CBE4DE;
 body {
     background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: sans-serif;
     display: flex; flex-direction: column;}
@@ -59,99 +59,8 @@ header {
 
 
 // ---------------------main--------------------------------------------------------------------------------------------------
+
 main {background-color: $clr-dark1-tr; flex: auto;}
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5vh;
-    gap: 5em;
-    .login, .signup {
-        border-bottom: 1px solid $clr-dark2;
-        border-top: 1px solid $clr-dark2;
-        width: 300px; 
-        border-radius: 20px; 
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em;
-        p {font-size: 1.2rem;}
-        h2 {margin-top: 0.8em;}
-        form {text-align: center; font-size: 1.4rem; position: relative; width: 250px;}
-        label {
-            position: absolute; 
-            right: 1em; 
-            &:nth-of-type(1) {top: 1.4em;}
-            &:nth-of-type(2) {top: 4.6em;}
-            &:nth-of-type(3) {top: 7.6em;}
-            &:nth-of-type(4) {top: 10.9em;}
-            &:nth-of-type(5) {top: 14em;}
-        }
-
-        button {margin-top: 1em; 
-            background-color: $clr-dark1; 
-            border: none; color: $clr-light2;
-            cursor: pointer;
-            &:hover {border-bottom: 1px solid $clr-light2;}
-        }
- 
-        .altlogin{
-            background-color: $clr-dark1; 
-            border: 1px solid $clr-light2; 
-            color: $clr-light2;
-            font-weight: 600;
-            border-radius: 5px;
-            padding: 0.5em 1em;
-            border-radius: 1.2em;
-            margin-top: 1em;
-            width: 240px;
-            height: 30px;
-            text-align: center;
-            i {margin-right: 2em;}
-            a {color: $clr-light2; width: 240px;}
-            cursor: pointer;
-            &:nth-of-type(1):hover {background-color: black;}
-            &:nth-of-type(2):hover {background-color: #425e9b;}
-        }
-    }
-
-    .login {
-        form {
-            input {
-                background-color: $clr-dark1-tr; 
-                border: 1px solid $clr-light2; 
-                color: $clr-light2;
-                border-radius: 5px;
-                padding: 0.5em 2.5vw;
-                border-radius: 1.2em;
-                margin-top: 1em;
-                width: 240px;
-                &:focus {outline: none;}
-            }
-        }  
-    }
-
-    .signup {
-        margin-bottom: 5vh;
-        form {
-            input {
-                background-color: $clr-dark1-tr; 
-                border: 1px solid $clr-light2; 
-                color: $clr-light2;
-                border-radius: 5px;
-                padding: 0.5em 1em;
-                border-radius: 1.2em;
-                margin-top: 1em;
-                width: 240px;
-                &:focus {outline: none;}
-                &::placeholder {color: $clr-light1;}
-            }
-        }      
-    }
-}
-
-input#email:valid, input#email2:valid  {border: 1px solid lime; } 
 
 // ---------------------footer-------------------------------------------------------------------------------------------------
 
