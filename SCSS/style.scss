@@ -1,11 +1,11 @@
-*{padding: 0; margin: 0; box-sizing: border-box; list-style: none;}
+*{padding: 0; margin: 0; box-sizing: border-box; list-style: none; text-decoration: none;}
 :root {font-size: 62.5%;} html, body {height: 100%;}
-$primary-color-dark1: #2C3333; $secondary-dark1-tr: rgba($color: #2C3333, $alpha: 0.98);
-$primary-color-dark2: #395B64; $secondary-dark2-tr: rgba($color: #2e4f4f, $alpha: 0.9);
-$primary-color-light1: #A5C9CA;
-$primary-color-light2: #E7F6F2;
+$clr-dark1: #2C3333; $clr-dark1-tr: rgba($color: #2C3333, $alpha: 0.98);
+$clr-dark2: #395B64; $clr-dark2-tr: rgba($color: #2e4f4f, $alpha: 0.9);
+$clr-light1: #A5C9CA;
+$clr-light2: #E7F6F2;
 body {
-    background-image: url(/Assets/bgimg.jpg); color: $primary-color-light2; font-family: sans-serif;
+    background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex; flex-direction: column;}
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -14,25 +14,28 @@ header {
     padding: 2em 1.5em;
     display: flex;
     justify-content:space-between;
-    background-color: $secondary-dark2-tr;
-    color: $primary-color-light2;
+    background-color: $clr-dark2-tr;
+    color: $clr-light2;
     height: 100px;
 
     nav ul {display: flex;justify-content: end;
         li {
-            background-color: $primary-color-dark1;
+            &:hover {transform: scale(1.05)}; 
+            &:nth-of-type(4) {margin-left: 3vw;}; 
+            transition: all 0.3s;
+        } 
+        li a {
+            background-color: $clr-dark1;
             padding: 0.5em 2.5vw;
             border-radius: 1.2em;
-            box-shadow: 3px 3px 10px $primary-color-light2;
-            transition: all 0.5s;
+            box-shadow: 3px 3px 10px $clr-light2;
+            transition: all 0.3s;
             margin-left: 2vw;
             cursor: pointer;
-            a {color: $primary-color-light2; text-decoration: none;}
+            color: $clr-light2; text-decoration: none;
             &:active {animation-name: dim; 
                 animation-duration: 0.1s;
                 animation-fill-mode: forwards;}
-            &:hover {transform: scale(1.05);}
-            &:nth-of-type(4) {margin-left: 3vw;}
         }
     }
 
@@ -50,17 +53,18 @@ header {
 }
 
 @keyframes dim {
-    0% {box-shadow: 3px 3px 10px $primary-color-light2;}
-    20% {box-shadow: 2.7px 2.7px 8px $primary-color-light2; transform: scale(0.98);}
-    40% {box-shadow: 2.2px 2.2px 4px $primary-color-light2; transform: scale(0.97)}
-    70% {box-shadow: 2px 2px 2px $primary-color-light2; transform: scale(0.95)}
+    0% {box-shadow: 3px 3px 10px $clr-light2;}
+    20% {box-shadow: 2.7px 2.7px 8px $clr-light2; transform: scale(0.98);}
+    40% {box-shadow: 2.2px 2.2px 4px $clr-light2; transform: scale(0.97)}
+    70% {box-shadow: 2px 2px 2px $clr-light2; transform: scale(0.95)}
     100% {box-shadow: none; transform: scale(0.95);}
 }
 
 
 // ---------------------main-------------------------------------------------------------------------------------------------------------
 
-main {background-color: $secondary-dark1-tr; flex: auto;}
+main {background-color: $clr-dark2-tr;
+     flex: auto;}
 .mailer {
     display: flex;
     height: 50px;
@@ -71,17 +75,17 @@ main {background-color: $secondary-dark1-tr; flex: auto;}
             height: 100%; 
             width: 300px; 
             border-radius: 1.2em; 
-            background-color: rgba($color: #2e4f4f, $alpha: 0.9);
+            background-color: transparent;
             font-size: 1.6rem;
             outline: none;
             padding-left: 1em;
-            color: $primary-color-light2;
-            border: none;
+            color: $clr-light2;
+            border: 1px solid $clr-light1;
             transition: all 0.3s;
         }
         button {
-            color: $primary-color-dark2; 
-            background-color: $primary-color-light1;
+            color: $clr-dark2; 
+            background-color: $clr-light1;
             position: absolute;
             border: none;
             padding: 0.45em 0.6em;
@@ -89,11 +93,11 @@ main {background-color: $secondary-dark1-tr; flex: auto;}
             right: 0.5em;
             top: 0.3em;
             cursor: pointer;
-            &:hover {color: $primary-color-light2;}
+            &:hover {color: $clr-light2;}
 
         }
         label {
-            color: $primary-color-light2;
+            color: $clr-light1;
             position: absolute;
             left: 1.2em;
             top: 0.8em;
@@ -106,12 +110,12 @@ main {background-color: $secondary-dark1-tr; flex: auto;}
 
 input#mailer:focus +label {
     transform: translateY(-1.5em) scale(0.9); 
-    color: $primary-color-light2;
-    background-color: $primary-color-dark1;
+    color: $clr-light2;
+    background-color: $clr-dark2;
     padding: 0em 0.3em;
-    border-left: 1px solid $primary-color-light2;
-    border-right: 1px solid $primary-color-light2;}
-input#mailer:focus {border: 1px solid $primary-color-light2;}
+    border-left: 1px solid $clr-light2;
+    border-right: 1px solid $clr-light2;}
+input#mailer:focus {border: 1px solid $clr-light2;}
 input#mailer:valid {border-color: lime; color: lime; } 
 input#mailer:valid +label {display: none;}
 
@@ -119,7 +123,7 @@ input#mailer:valid +label {display: none;}
 .wrapper {
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
-    grid-template-rows: 8em 100px 1fr 50px ;
+    grid-template-rows: 8em 120px 1fr 50px ;
     h3 {font-size: 1.3rem;}
 
     .hero {width: 70ch; p {font-size: 1.4rem;}; grid-area: 2 / 3 / 3 / 5;}
@@ -136,7 +140,30 @@ input#mailer:valid +label {display: none;}
             max-width: 500px; min-width: 200px; 
             background: url(/Assets/pexels-eric-anada-5915844.jpg);
             background-size: cover;
-            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position-y: 25px;
+
+            @media (hover) {
+                transition: 0.3s ease-in;
+                background-position-y: 0; 
+                cursor: pointer;
+                &:hover {background-position-y: 25px; rotate: 2deg;}
+                .merchinfo {opacity: 0; &:hover {opacity: 1;}}
+            }
+
+            .merchinfo {
+                width: 100%; 
+                height: 100%;
+                a {
+                padding: 0.5em 3em;
+                border-radius: 1.2em;
+                border: 2px solid $clr-light1;
+                color: $clr-light2;
+                font-size: 1.2rem;
+                &:hover {background-color: $clr-dark1;}
+                
+                }
+            }
         }
     }
 }
@@ -148,13 +175,13 @@ input#mailer:valid +label {display: none;}
 .nav-social {
     position: absolute; 
     top: 23em;
-    .sociallogo {transition: 0.3s; a {font-size: 3em; color: $primary-color-light2; text-decoration: none;}}
+    .sociallogo {transition: 0.3s; a {font-size: 3em; color: $clr-light2; text-decoration: none;}}
     .sociallogo:hover {transform: scale(1.2) translateX(5px);}}
 
 // ---------------------footer-------------------------------------------------------------------------------------------------
 
 footer {
-    background-color: $secondary-dark2-tr;
+    background-color: $clr-dark2-tr;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -168,23 +195,28 @@ footer {
         margin-right: 0.5em;
         color: #50a784;
         font-weight: 700;
-        background-color: $primary-color-dark1;
+        background-color: $clr-dark1;
         pointer-events: none;
     }
+
+    p span.lhrating .lr1 {display: none;}
+
     .code {
         padding: 0.5em; 
         border: 2px solid 
-        $primary-color-light2; 
+        $clr-light2; 
         font-size: 1.2rem; 
-        background-color: $primary-color-dark2;
-        a {color: $primary-color-light2; pointer-events: visible;}}
+        background-color: $clr-dark2;
+        a {color: $clr-light2; pointer-events: visible;}}
+
     p:nth-of-type(2) {translate: 30px;}
+
     nav.contact {
         ul li {
             display: inline-block;
             font-size: 1.2rem;
             margin-left: 1em;
-            a {text-decoration: none; color: $primary-color-light2; &:hover {color: $primary-color-light1;}}
+            a {text-decoration: none; color: $clr-light2; &:hover {color: $clr-light1;}}
         }
     }
 }
@@ -193,7 +225,7 @@ footer {
 
 @media (max-width: 620px) {
     header {flex-direction: column; align-items: center; height: 130px;} 
-    header nav ul {justify-content: center; margin-top: 1em;}
+    header nav ul {justify-content: center; margin-top: 2em;}
     header nav ul li {margin: 0.3;}
     .mailer {justify-content: center; margin: 0;}
     .wrapper .hero {width: 40ch; margin-top: -3em;}

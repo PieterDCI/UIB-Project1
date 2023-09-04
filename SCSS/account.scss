@@ -5,7 +5,7 @@ $clr-dark2: #9E7777; $clr-dark2-tr: rgba($color: #9E7777, $alpha: 0.9);
 $clr-light1: #DEBA9D;
 $clr-light2: #F5E8C7;
 body {
-    background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: sans-serif;
+    background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex; flex-direction: column;}
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -20,19 +20,22 @@ header {
 
     nav ul {display: flex;justify-content: end;
         li {
-            background-color: $clr-dark1;
-            padding: 0.5em 2.5vw;
+            &:hover {transform: scale(1.05)}; 
+            &:nth-of-type(3) {margin-left: 3vw;}; 
+            transition: all 0.3s;
+        } 
+        li a {
+            background: rgba($color: #6F4C5B, $alpha: 0.9);
             border-radius: 1.2em;
-            box-shadow: 3px 3px 10px $clr-light2;
+            box-shadow: -5px -5px 12px #513742, 5px 5px 12px $clr-light2;
+            padding: 0.5em 2.5vw;
             transition: all 0.5s;
             margin-left: 2vw;
             cursor: pointer;
-            a {color: $clr-light2; text-decoration: none;}
+            color: $clr-light2; text-decoration: none;
             &:active {animation-name: dim; 
                 animation-duration: 0.1s;
                 animation-fill-mode: forwards;}
-            &:hover {transform: scale(1.05);}
-            &:nth-of-type(4) {margin-left: 3vw;}
         }
     }
 
@@ -59,23 +62,22 @@ header {
 
 
 // ---------------------main--------------------------------------------------------------------------------------------------
-main {background-color: $clr-dark1-tr; flex: auto;}
+main {background-color: $clr-dark2-tr; flex: auto;}
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 10vh;
     gap: 5em;
     .login, .signup {
-        border-bottom: 1px solid $clr-dark2;
-        border-top: 1px solid $clr-dark2;
+        border-radius: 20px;
+        background: rgba($color: #6F4C5B, $alpha: 0.9);
+        box-shadow: -5px -5px 20px #513742, 5px 5px 20px $clr-light2;
         width: 300px; 
-        border-radius: 20px; 
-        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1em;
+        padding: 3em;
         p {font-size: 1.2rem;}
         h2 {margin-top: 0.8em;}
         form {text-align: center; font-size: 1.4rem; position: relative; width: 250px;}
@@ -90,14 +92,14 @@ main {background-color: $clr-dark1-tr; flex: auto;}
         }
 
         button {margin-top: 1em; 
-            background-color: $clr-dark1; 
+            background-color: transparent; 
             border: none; color: $clr-light2;
             cursor: pointer;
             &:hover {border-bottom: 1px solid $clr-light2;}
         }
  
         .altlogin{
-            background-color: $clr-dark1; 
+            background-color: transparent; 
             border: 1px solid $clr-light2; 
             color: $clr-light2;
             font-weight: 600;
@@ -119,7 +121,7 @@ main {background-color: $clr-dark1-tr; flex: auto;}
     .login {
         form {
             input {
-                background-color: $clr-dark1-tr; 
+                background-color: transparent; 
                 border: 1px solid $clr-light2; 
                 color: $clr-light2;
                 border-radius: 5px;
@@ -136,7 +138,7 @@ main {background-color: $clr-dark1-tr; flex: auto;}
         margin-bottom: 5vh;
         form {
             input {
-                background-color: $clr-dark1-tr; 
+                background-color: transparent; 
                 border: 1px solid $clr-light2; 
                 color: $clr-light2;
                 border-radius: 5px;
@@ -178,7 +180,7 @@ footer {
 
 @media (max-width: 620px) {
     header {flex-direction: column; align-items: center; height: 130px;} 
-    header nav ul {justify-content: center; margin-top: 1em;}
+    header nav ul {justify-content: center; margin-top: 2em;}
     header nav ul li {margin: 0.3;}
 }
 

@@ -1,11 +1,11 @@
-*{padding: 0; margin: 0; box-sizing: border-box; list-style: none;}
+*{padding: 0; margin: 0; box-sizing: border-box; list-style: none; text-decoration: none;}
 :root {font-size: 62.5%;} html, body {height: 100%;}
 $clr-dark1: #352F44; $clr-dark1-tr: rgba($color: #352F44, $alpha: 0.97);
 $clr-dark2: #5C5470; $clr-dark2-tr: rgba($color: #5C5470, $alpha: 0.9);
 $clr-light1: #B9B4C7;
 $clr-light2: #FAF0E6;
 body {
-    background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: sans-serif;
+    background-image: url(/Assets/bgimg.jpg); color: $clr-light2; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -18,38 +18,27 @@ header {
     padding: 2em 1.5em;
     display: flex;
     justify-content:space-between;
-    background-color: $clr-dark2-tr;
+    background-color: $clr-dark1-tr;
     color: $clr-light2;
     height: 100px;
 
-    #search {
-        background-color: $clr-dark1; 
-        color: $clr-light2; 
-        border: none; 
-        outline: none;
-        width: 100px;
-        &::placeholder {color: $clr-light1;}
-        &:focus {border: none;}
-    }
-
     nav ul {display: flex;justify-content: end;
         li {
+            &:hover {transform: scale(1.05)}; 
+            &:nth-of-type(3) {margin-left: 2vw;}; 
+            transition: all 0.3s;
+        } 
+        li a {
             background-color: $clr-dark1;
             padding: 0.5em 2.5vw;
             border-radius: 1.2em;
             box-shadow: 3px 3px 10px $clr-light2;
-            &:nth-of-type(1) {transition: none;}
-            &:nth-of-type(1):hover {transform: none;}
-            &:nth-of-type(1):active {animation-name: none;}
             transition: all 0.5s;
             margin-left: 2vw;
-            cursor: pointer;
-            a {color: $clr-light2; text-decoration: none;}
+            color: $clr-light2; 
             &:active {animation-name: dim; 
                 animation-duration: 0.1s;
                 animation-fill-mode: forwards;}
-            &:hover {transform: scale(1.05);}
-            &:nth-of-type(2) {margin-left: 4vw;}
         }
     }
 
@@ -76,7 +65,60 @@ header {
 
 
 // ---------------------main--------------------------------------------------------------------------------------------------
-main {background-color: $clr-dark1-tr; flex: auto;}
+main {flex: auto; background-color: $clr-dark1-tr;}
+
+.mailer {
+    display: flex;
+    height: 50px;
+    justify-content: end;
+    margin-right: 1.5em;
+    form { height: 35px; margin-top: 7.5px; position: relative;
+        #blogsearch {
+            height: 100%; 
+            width: 300px; 
+            border-radius: 1.2em; 
+            background-color: transparent;
+            font-size: 1.6rem;
+            outline: none;
+            padding-left: 1em;
+            color: $clr-light2;
+            border: 1px solid $clr-light1;
+            transition: all 0.3s;
+        }
+        button {
+            color: $clr-dark2; 
+            background-color: $clr-light1;
+            position: absolute;
+            border: none;
+            padding: 0.45em 0.6em;
+            border-radius: 50%;
+            right: 0.5em;
+            top: 0.3em;
+            cursor: pointer;
+            &:hover {color: $clr-light2;}
+
+        }
+        label {
+            color: $clr-dark2;
+            position: absolute;
+            left: 1.2em;
+            top: 0.8em;
+            font-size: 1.4rem;
+            cursor:text;
+            transition: all 0.3s;
+        }
+    }
+}
+
+input#blogsearch:focus +label {
+    transform: translateY(-1.5em) scale(0.9); 
+    color: $clr-light2;
+    background-color: $clr-dark2;
+    padding: 0em 0.3em;
+    border-left: 1px solid $clr-light2;
+    border-right: 1px solid $clr-light2;}
+input#blogsearch:valid +label {display: none;}
+
 article {
     width: 70vw;
     margin: 10em auto;
@@ -105,19 +147,17 @@ article {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    img {width: 180px; 
-        height: 120px; 
+    img {width: 180px; height: 120px; 
         transition: 0.3s;
         border: none;
         &:hover, &:active {transform: scale(1.3);}}
    }
 }
 
-
 // ---------------------footer-------------------------------------------------------------------------------------------------
 
 footer {
-    background-color: $clr-dark2-tr;
+    background-color: $clr-dark1-tr;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -138,8 +178,9 @@ footer {
 
 @media (max-width: 620px) {
     header {flex-direction: column; align-items: center; height: 130px;} 
-    header nav ul {justify-content: center; margin-top: 1em;}
+    header nav ul {justify-content: center; margin-top: 2em;}
     header nav ul li {margin: 0.3;}
+    .mailer {justify-content: center; margin: 0;}
 }
     
 
